@@ -3,44 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="jouw naam" />
-    <meta name="color-scheme" content="dark light" />
-
-    <title>Digital garden van ...</title>
-    <link rel="stylesheet" href="./css/normal.css" />
-
-    <!-- Voeg jouw eigen domein toe in data-page -->
-    <script
-      data-page="https://example.com"
-      src="./scripts/main.js"
-      defer
-    ></script>
+    <title>Murdoku - The Murder Files</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <!-- HEADER -->
     <header>
-      <h1>Digital garden van steije ...</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="https://github.com/account/repo">Learning Log</a></li>
-        </ul>
-      </nav>
+      <h1>MURDOKU</h1>
+
+      <p>THE MURDER FILES</p>
+      <hr />
     </header>
 
+    <!-- INTRODUCTIE -->
+    <section class="introduction">
+      <h2>Een moord is gepleegd...</h2>
+
+      <p>
+        Er heeft een moord plaatsgevonden. Verschillende verdachten waren
+        aanwezig op de plaats delict. Aan jou de taak om te achterhalen wie de
+        dader is.
+      </p>
+
+      <p>
+        Onderzoek de aanwijzingen, plaats de verdachten op het speelbord en
+        ontdek wie als enige samen met het slachtoffer in dezelfde ruimte was.
+      </p>
+    </section>
+    <input type="checkbox" id="theme-toggle" />
+
+    <label for="theme-toggle">🔦</label>
+
     <main>
-      <article>
-        <h2>Een titel</h2>
+      <!-- SPEELBORD -->
+      <section class="crime-scene">
+        <h2>De plaats delict</h2>
+        <p>Onderzoek het speelbord en plaats de verdachten.</p>
+        <div class="game-board">
+          <!-- Rij 1 -->
+          <div class="vakje b"></div>
+          <div class="vakje b"><span class="cirkel"></span></div>
+          <div class="vakje b"><span class="driehoek"></span></div>
+          <div class="vakje e"><span class="cirkel"></span></div>
+          <div class="vakje e"></div>
+          <div class="vakje e"></div>
 
-        <p>Alinea...</p>
-      </article>
+          <!-- Rij 2 -->
+          <div class="vakje b"></div>
+          <div class="vakje b"></div>
+          <div class="vakje b"></div>
+          <div class="vakje e"></div>
+          <div class="vakje e"></div>
+          <div class="vakje e"><span class="cirkel"></span></div>
 
-      <article>
-        <h2>Nog een titel</h2>
+          <!-- Rij 3 -->
+          <div class="vakje c"></div>
+          <div class="vakje c"></div>
+          <div class="vakje c"></div>
+          <div class="vakje c"><span class="cirkel"></span></div>
+          <div class="vakje e"></div>
+          <div class="vakje e"><span class="cirkel"></span></div>
 
-        <p>Nog een alinea...</p>
-      </article>
+          <!-- Rij 4 -->
+          <div class="vakje c"><span class="cirkel"></span></div>
+          <div class="vakje c"></div>
+          <div class="vakje c"><span class="cirkel"></span></div>
+          <div class="vakje c"></div>
+          <div class="vakje d"></div>
+          <div class="vakje d"></div>
+
+          <!-- Rij 5 -->
+          <div class="vakje a"></div>
+          <div class="vakje a"><span class="cirkel"></span></div>
+          <div class="vakje a"></div>
+          <div class="vakje a"><span class="cirkel"></span></div>
+          <div class="vakje d"></div>
+          <div class="vakje d"><span class="rechthoek"></span></div>
+
+          <!-- Rij 6 -->
+          <div class="vakje a"><span class="cirkel"></span></div>
+          <div class="vakje a"><span class="cirkel"></span></div>
+          <div class="vakje a"></div>
+          <div class="vakje a"><span class="cirkel"></span></div>
+          <div class="vakje d"></div>
+          <div class="vakje d"><span class="cirkel"></span></div>
+        </div>
+      </section>
+
+      <!-- SPELUITLEG -->
+      <section class="rules">
+        <input type="checkbox" id="rules-toggle" />
+
+        <label for="rules-toggle" class="rules-button"> Spelregels </label>
+
+        <div class="rules-content">
+          <h2>Hoe speel je?</h2>
+
+          <div class="rule-list">
+            <article>
+              <h3>01. Onderzoek</h3>
+              <p>
+                Lees de aanwijzingen van alle verdachten. Iedere aanwijzing
+                vertelt iets over hun locatie.
+              </p>
+            </article>
+
+            <article>
+              <h3>02. Plaats de verdachten</h3>
+              <p>
+                Gebruik de aanwijzingen om iedereen op de juiste positie op het
+                speelbord te plaatsen.
+              </p>
+            </article>
+
+            <article>
+              <h3>03. Gebruik logica</h3>
+              <p>
+                Iedere rij en kolom mag maximaal één persoon bevatten. Gebruik
+                kruisjes om onmogelijke posities aan te geven.
+              </p>
+            </article>
+
+            <article>
+              <h3>04. Ontmasker de dader</h3>
+              <p>
+                Het slachtoffer ligt op het laatst overgebleven vakje. De
+                persoon die als enige met het slachtoffer in dezelfde ruimte
+                was, is de moordenaar.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- VERDACHTEN -->
+      <section class="suspects">
+        <h2>De verdachten</h2>
+        <p>Onderzoek de aanwijzingen van iedere verdachte.</p>
+
+        <div class="suspect-grid">
+          <article class="suspect-card">
+            <div class="portrait"></div>
+            <h3>Erdem</h3>
+            <p>Was in de kamer met de rode vakjes.</p>
+          </article>
+
+          <article class="suspect-card">
+            <div class="portrait"></div>
+            <h3>LeBron</h3>
+            <p>Bevond zich naast de driehoek.</p>
+          </article>
+
+          <article class="suspect-card">
+            <div class="portrait"></div>
+            <h3>Marlon</h3>
+            <p>Bevond zich niet naast een cirkel.</p>
+          </article>
+
+          <article class="suspect-card">
+            <div class="portrait"></div>
+            <h3>Nour</h3>
+            <p>Bevond zich onder Erdem.</p>
+          </article>
+
+          <article class="suspect-card">
+            <div class="portrait"></div>
+            <h3>Tristan</h3>
+            <p>Bevond zich in de kamer met de blauwe vakjes.</p>
+          </article>
+
+          <article class="suspect-card victim">
+            <div class="portrait"></div>
+            <h3>Alkan</h3>
+            <p>
+              Het slachtoffer. Bevind zich in het laatst overgebleven vakje.
+              Samen met de moordenaar.
+            </p>
+          </article>
+        </div>
+      </section>
     </main>
 
-    <footer></footer>
+    <!-- FOOTER -->
+    <footer>
+      <p></p>
+      <p></p>
+    </footer>
   </body>
 </html>

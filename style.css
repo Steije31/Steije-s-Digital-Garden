@@ -1,0 +1,198 @@
+html {
+  color-scheme: light;
+  --background: cornsilk;
+  --color: #151515;
+  --grid-color: black;
+}
+@font-face {
+  font-family: "Baskervville";
+  src: url("fonts/Baskervville-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("fonts/LibreBaskerville-Regular.ttf");
+}
+
+h1 {
+  font-family: "Baskervville", serif;
+}
+
+body {
+  font-family: "Libre Baskerville", serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--color);
+}
+
+#theme-toggle {
+  display: none;
+}
+
+body:has(#theme-toggle:checked) {
+  color-scheme: dark;
+  --background: #151515;
+  --color: cornsilk;
+  --grid-color: gold;
+}
+
+body {
+  background: var(--background);
+  color: var(--color);
+}
+
+header {
+  position: relative;
+  text-align: center;
+}
+
+#theme-toggle + label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+@media (min-width: 768px) {
+  .game-board {
+    max-width: 500px;
+  }
+}
+
+.crime-scene {
+  grid-area: board;
+}
+
+.suspects {
+  grid-area: suspects;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+    "board"
+    "suspects";
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  main {
+    grid-template-areas: "suspects board";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.suspect-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.suspect-card {
+  border: 1px solid var(--grid-color);
+  padding: 10px;
+  text-align: center;
+}
+
+#rules-toggle {
+  display: none;
+}
+
+.rules-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid var(--grid-color);
+  text-align: center;
+}
+
+.rules-content {
+  display: none;
+  text-align: center;
+}
+
+#rules-toggle:checked ~ .rules-content {
+  display: block;
+}
+
+.crime-scene h2,
+.crime-scene > p,
+.suspects h2,
+.suspects > p {
+  text-align: center;
+}
+
+.introduction {
+  text-align: center;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 3px;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1;
+  margin: 20px auto;
+  background: #252525;
+  border: 5px solid #252525;
+}
+
+.vakje {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* Kleuren van de ruimtes */
+.a {
+  background: #edc9c2;
+}
+.b {
+  background: #ffd698;
+}
+.c {
+  background: #e2e8d0;
+}
+.d {
+  background: #e2dced;
+}
+.e {
+  background: #bfdaf5;
+}
+
+/* cirkel */
+.cirkel {
+  width: 55%;
+  aspect-ratio: 1;
+  background: #71685b;
+  border: 3px solid #292929;
+  border-radius: 50%;
+}
+
+/* driehoek */
+.driehoek {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 45px solid #c5b77c;
+}
+
+/*afgeronde rechthoek */
+.rechthoek {
+  width: 65%;
+  height: 55%;
+  background: #777777;
+  border: 3px solid #292929;
+  border-radius: 8px;
+}
